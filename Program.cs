@@ -1,33 +1,67 @@
 ﻿using System;
 
-namespace ConsoleApp2
+namespace ConsoleApp1
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Öğrencimisin?   (e/h)" );
-            string yanıt = Console.ReadLine();
-            if (yanıt=="e")
-            {
-                musteri ogrenci = new musteri();
-                ogrenci.ad = "Hasan";
-                ogrenci.soyad = "KAYA";
-                ogrenci.ogr_no = 221903054;
-                ogrenci.yas = 19;
 
-                Console.WriteLine(ogrenci.ad);
+            while (0 == 0)
+            {
+                
+                
+            
+            Console.WriteLine("Alan Hesaplamak İçin 1'e Çevre Hesaplamak İçin 2'ye Programdan çıkmak için 3'e Basın?");
+            int sec = Convert.ToInt32(Console.ReadLine());
+
+            Dikdörtgen dikdörtgen = new Dikdörtgen();
+
+            if (sec == 1)
+            {
+                Console.WriteLine("Yüksekliği ve uzunluğu Giriniz");
+                dikdörtgen.b = Convert.ToInt32(Console.ReadLine());
+                dikdörtgen.h = Convert.ToInt32(Console.ReadLine());
+
+
+                Console.WriteLine("Dikdörtgenin Alanı => " + alanhesapla(dikdörtgen.b, dikdörtgen.h));
+            }
+
+            else if (sec == 2)
+            {
+                Console.WriteLine("Yüksekliği ve uzunluğu Giriniz");
+                dikdörtgen.b = Convert.ToInt32(Console.ReadLine());
+                dikdörtgen.h = Convert.ToInt32(Console.ReadLine());
+
+
+                Console.WriteLine("Dikdörtgenin Çevresi => " + cevrehesapla(dikdörtgen.b, dikdörtgen.h));
+            }
+            else if (sec == 3)
+            {
+                break;
+            }
 
             }
-            else if (yanıt == "h")
+
+            static int alanhesapla(int b, int h)
             {
-                musteri müsteri = new musteri();
-                müsteri.ad = "Burak";
-                müsteri.soyad = "YILDIRIM";
-                müsteri.yas = 36;
-                müsteri.meslek = "Yazılım Mühendisi";
-                müsteri.maas = 5260;
+                return b * h;
             }
+
+            static int cevrehesapla(int b, int h)
+            {
+                int c = 2 * b + 2 * h;
+                return c;
+            }
+
         }
     }
+
+    class Dikdörtgen
+    {
+        public int b { get; set; }
+        public int h { get; set; }
+    }
+
+    
 }
